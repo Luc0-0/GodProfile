@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="GodProfile AI Agent Toolkit">
+</p>
+
 # 🔱 GodProfile MCP Server
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -8,7 +12,9 @@ An official **Model Context Protocol (MCP)** server enabling AI Agents (like Cla
 
 GodProfile provides LLMs with the programmatic tools and aesthetic constraints required to upgrade standard Markdown profiles into animated, live-data injected "Bento Box" art exhibits.
 
----
+<div align="center">
+  <img src="assets/divider.svg" width="100%">
+</div>
 
 ## ✨ Arsenal (The 12 Core Tools)
 
@@ -27,7 +33,9 @@ GodProfile exposes 12 massive generative capabilities native to your AI's logic 
 11. **Github CI Automation** (`setup_github_automation`): Writes Python scrapers and `.github/workflows` to power the SVGs.
 12. **Playwright Banners** (`capture_animated_banner_gif`): Opens headless browsers to render HTML interaction scripts to `.gif`.
 
----
+<div align="center">
+  <img src="assets/divider.svg" width="100%">
+</div>
 
 ## 🎨 Theme Engines (MCP Resources)
 
@@ -37,7 +45,9 @@ The following design system tokens are dynamically fed into the LLM via `mcp.res
 - `theme://neon-cyberpunk` (High contrast glitch nodes, magenta pathways).
 - `theme://minimalist` (Pure white interfaces, ultra-light grey dropshadows).
 
----
+<div align="center">
+  <img src="assets/divider.svg" width="100%">
+</div>
 
 ## 🚀 Installation & Usage
 

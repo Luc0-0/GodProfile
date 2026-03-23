@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f14" />
+      <stop offset="100%" stop-color="#151c25" />
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0 H0 V20" fill="none" stroke="#2b303a" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    <style>
+      .title { font-family: -apple-system, system-ui, sans-serif; font-size: 38px; font-weight: 800; fill: #eceff4; letter-spacing: 2px;}
+      .subtitle { font-family: "Courier New", monospace; font-size: 13px; fill: #b6a891; letter-spacing: 4px;}
+      .node { fill: #b6a891; }
+      .path { fill: none; stroke: #2b303a; stroke-width: 1.5; }
+      .pulse { fill: #eceff4; opacity: 0.8; }
+    </style>
+  </defs>
+
+  <rect width="800" height="250" fill="url(#bg)" rx="16"/>
+  <rect width="800" height="250" fill="url(#grid)" rx="16"/>
+  <rect x="0.5" y="0.5" width="799" height="249" fill="none" stroke="#2b303a" stroke-width="1.5" rx="16"/>
+
+  <!-- Aesthetic Graphic -->
+  <g transform="translate(400, 125)">
+    <!-- Paths -->
+    <path d="M -150 0 C -50 -80, 50 -80, 150 0" class="path"/>
+    <path d="M -150 0 C -50 80, 50 80, 150 0" class="path"/>
+    <path d="M -250 50 C -150 0, -150 0, -50 0" class="path" opacity="0.4"/>
+    <path d="M 250 -50 C 150 0, 150 0, 50 0" class="path" opacity="0.4"/>
+    
+    <!-- Central MCP Core -->
+    <circle cx="0" cy="0" r="45" fill="#1b2430" stroke="#b6a891" stroke-width="2"/>
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#2b303a" stroke-width="1" stroke-dasharray="4 2"/>
+    
+    <!-- Satellites -->
+    <circle cx="-150" cy="0" r="8" class="node"/>
+    <circle cx="150" cy="0" r="8" class="node"/>
+    <circle cx="-50" cy="-58" r="6" class="node"/>
+    <circle cx="50" cy="58" r="6" class="node"/>
+    
+    <text y="-8" text-anchor="middle" class="title">GODPROFILE</text>
+    <text y="14" text-anchor="middle" class="subtitle">AI MCP SERVER</text>
+    
+    <!-- Animated Packets -->
+    <circle r="3" class="pulse">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M -150 0 C -50 -80, 50 -80, 150 0"/>
+    </circle>
+    <circle r="3" class="pulse">
+      <animateMotion dur="3s" repeatCount="indefinite" path="M 150 0 C 50 80, -50 80, -150 0"/>
+    </circle>
+  </g>
+</svg>
