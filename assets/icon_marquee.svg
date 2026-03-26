@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="60"
+     viewBox="0 0 800 60" role="img" aria-label="Tech stack marquee">
+  <defs>
+    <linearGradient id="mqBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#0b0f14"/>
+      <stop offset="100%" stop-color="#151c25"/>
+    </linearGradient>
+    <clipPath id="mqClip">
+      <rect width="800" height="60" rx="10"/>
+    </clipPath>
+    <style>
+      @keyframes mqScroll {
+        0%   { transform: translateX(0px); }
+        100% { transform: translateX(-835px); }
+      }
+      .mq-track {
+        animation: mqScroll 30s linear infinite;
+        will-change: transform;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="60" rx="10" fill="url(#mqBg)"/>
+  <rect width="800" height="60" rx="10" fill="none"
+        stroke="#2b303a" stroke-width="1" opacity="0.5"/>
+
+  <!-- Scrolling track (clipped) -->
+  <g clip-path="url(#mqClip)">
+    <g class="mq-track">
+      <rect x="0" y="16" width="70" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="35" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Python</text>
+<rect x="80" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="129" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">TypeScript</text>
+<rect x="188" y="16" width="56" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="216" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Rust</text>
+<rect x="254" y="16" width="42" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="275" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Go</text>
+<rect x="306" y="16" width="70" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="341" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Docker</text>
+<rect x="386" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="435" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Kubernetes</text>
+<rect x="494" y="16" width="63" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="525" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">React</text>
+<rect x="567" y="16" width="77" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="605" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">FastAPI</text>
+<rect x="654" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="703" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">PostgreSQL</text>
+<rect x="762" y="16" width="63" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="793" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Redis</text>
+<rect x="835" y="16" width="70" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="870" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Python</text>
+<rect x="915" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="964" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">TypeScript</text>
+<rect x="1023" y="16" width="56" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1051" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Rust</text>
+<rect x="1089" y="16" width="42" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1110" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Go</text>
+<rect x="1141" y="16" width="70" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1176" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Docker</text>
+<rect x="1221" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1270" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Kubernetes</text>
+<rect x="1329" y="16" width="63" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1360" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">React</text>
+<rect x="1402" y="16" width="77" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1440" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">FastAPI</text>
+<rect x="1489" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1538" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">PostgreSQL</text>
+<rect x="1597" y="16" width="63" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1628" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Redis</text>
+      <rect x="835" y="16" width="70" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="870" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Python</text>
+<rect x="915" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="964" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">TypeScript</text>
+<rect x="1023" y="16" width="56" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1051" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Rust</text>
+<rect x="1089" y="16" width="42" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1110" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Go</text>
+<rect x="1141" y="16" width="70" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1176" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Docker</text>
+<rect x="1221" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1270" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Kubernetes</text>
+<rect x="1329" y="16" width="63" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1360" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">React</text>
+<rect x="1402" y="16" width="77" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1440" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">FastAPI</text>
+<rect x="1489" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1538" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">PostgreSQL</text>
+<rect x="1597" y="16" width="63" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1628" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Redis</text>
+<rect x="1670" y="16" width="70" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1705" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Python</text>
+<rect x="1750" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1799" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">TypeScript</text>
+<rect x="1858" y="16" width="56" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1886" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Rust</text>
+<rect x="1924" y="16" width="42" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="1945" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Go</text>
+<rect x="1976" y="16" width="70" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="2011" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Docker</text>
+<rect x="2056" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="2105" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Kubernetes</text>
+<rect x="2164" y="16" width="63" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="2195" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">React</text>
+<rect x="2237" y="16" width="77" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="2275" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">FastAPI</text>
+<rect x="2324" y="16" width="98" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="2373" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">PostgreSQL</text>
+<rect x="2432" y="16" width="63" height="28" rx="14" fill="rgba(182,168,145,0.15)" stroke="rgba(182,168,145,0.45)" stroke-width="1"/>
+<text x="2463" y="35" font-family="Consolas, monospace" font-size="12" fill="#eceff4" text-anchor="middle" dominant-baseline="auto" font-weight="500">Redis</text>
+    </g>
+  </g>
+</svg>

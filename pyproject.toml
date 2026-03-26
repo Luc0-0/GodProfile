@@ -1,13 +1,46 @@
 [project]
 name = "godprofile-mcp"
-version = "0.1.0"
-description = "MCP server for forging god-tier GitHub profiles"
+version = "0.2.0"
+description = "MCP server for forging god-tier GitHub profiles — animated SVGs, bento grids, live data widgets, and full CI automation"
 readme = "README.md"
 requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "GodProfile Contributors" }]
+keywords = [
+    "mcp", "model-context-protocol", "github-profile", "github-readme",
+    "readme-generator", "svg-generator", "bento-grid", "animated-svg",
+    "claude-ai", "ai-agent", "fastmcp", "github-actions", "automation",
+    "profile-readme", "developer-tools", "wakatime", "spotify", "open-source"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Multimedia :: Graphics",
+    "Framework :: AsyncIO",
+]
+
 dependencies = [
     "mcp>=1.2.0",
     "pydantic>=2.0.0",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/nipunnirwana/GodProfile"
+Repository = "https://github.com/nipunnirwana/GodProfile"
+Issues = "https://github.com/nipunnirwana/GodProfile/issues"
 
 [project.scripts]
 godprofile-server = "godprofile_mcp:main"
@@ -15,3 +48,11 @@ godprofile-server = "godprofile_mcp:main"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]

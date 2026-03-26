@@ -1,4 +1,3 @@
-import asyncio
 import os
 import sys
 
@@ -33,7 +32,7 @@ def refactor_readme_to_bento(readme_content: str) -> str:
     )
 
 @mcp.tool()
-def render_svg_widget(theme: str, data: dict, output_path: str) -> str:
+def render_svg_widget(theme: str, data: dict) -> str:
     """
     Generates extremely high-fidelity glassmorphic SVG cards with 12px borders 
     """
@@ -46,7 +45,7 @@ def render_svg_widget(theme: str, data: dict, output_path: str) -> str:
     )
 
 @mcp.tool()
-def generate_neural_network_map(tech_stack: dict, theme: str, output_path: str) -> str:
+def generate_neural_network_map(tech_stack: dict, theme: str) -> str:
     """
     Overhauls simple tech stack lists into visually stunning, data-connected 
     """
@@ -61,49 +60,85 @@ def setup_github_automation(features: list, repo_path: str) -> str:
     return github_ci_automation.generate_ci_workflow(features, repo_path)
 
 @mcp.tool()
-def render_spotify_now_playing() -> str:
-    """Generates dynamic SVGs mimicking the Spotify UI synced to live playback."""
-    return spotify_now_playing.setup_spotify_cron("repo", "id", "secret")
+def render_spotify_now_playing(track: str = "", artist: str = "", theme: str = "luxury-glass", is_playing: bool = True) -> str:
+    """
+    Generates a 400x100 SVG 'Now Playing' card mimicking the Spotify UI.
+    Includes animated equalizer bars when is_playing=True, themed colors, and album art placeholder.
+    Also returns a GitHub Actions cron workflow YAML for live Spotify sync if credentials are provided.
+    """
+    return spotify_now_playing.render_now_playing(track=track, artist=artist, theme=theme, is_playing=is_playing)
 
 @mcp.tool()
-def render_wakatime_activity_chart(theme: str) -> str:
-    """Constructs perfectly themed pie charts mapping coding language telemetry."""
-    return wakatime_metrics.render_wakatime_activity_chart(theme, {})
+def render_wakatime_activity_chart(theme: str, data: dict = {}) -> str:
+    """
+    Renders a 400x220 SVG horizontal bar chart of coding language activity.
+    data: dict mapping language names to percentage floats, e.g. {"Python": 48.3, "TypeScript": 27.1}.
+    Uses placeholder data if data is empty. Themed via theme tokens.
+    """
+    return wakatime_metrics.render_wakatime_activity_chart(theme, data)
 
 @mcp.tool()
 def setup_contribution_snake(theme: str) -> str:
-    """Configures the SVGs of a snake eating the user's contribution grid, re-themed."""
+    """
+    Generates a GitHub Actions workflow YAML that runs Platane/snk to animate the contribution grid
+    as a snake game. Injects custom theme hex colors into the workflow environment.
+    """
     return snake_game_injector.setup_contribution_snake(theme, "repo")
 
 @mcp.tool()
-def render_3d_contribution_globe() -> str:
-    """Injects CSS/JS or isometric SVGs rendering the GitHub globe."""
-    return isometric_3d_globe.generate_globe()
+def render_3d_contribution_globe(theme: str = "luxury-glass", highlight_points: list = []) -> str:
+    """
+    Generates a 400x400 SVG isometric 3D globe using real spherical-to-isometric projection math.
+    Renders 12 longitude + 8 latitude grid lines. Optional highlight_points: list of [lat, lon] pairs.
+    Includes slow animated rotation via SVG animateTransform.
+    """
+    return isometric_3d_globe.generate_globe(theme=theme, highlight_points=highlight_points or None)
 
 @mcp.tool()
 def fetch_latest_blog_posts(provider: str, username: str, theme: str) -> str:
-    """Fetches Dev.to/Medium articles and formats them into the Bento grid."""
+    """
+    Fetches the latest blog posts from Dev.to, Medium, Hashnode, or any RSS/Atom URL.
+    provider: 'devto', 'medium', 'hashnode', or a direct RSS URL.
+    Returns a themed SVG card (400x280) displaying up to 5 recent post titles and dates.
+    Uses stdlib urllib only — no external dependencies.
+    """
     return blog_fetcher.fetch_articles(provider, username, theme)
 
 @mcp.tool()
 def render_terminal_emulator_svg(commands: list, theme: str) -> str:
-    """Generates Neofetch-style text outputs for Hacker themes."""
+    """
+    Generates a 600x340 SVG animated terminal window with macOS-style window chrome.
+    commands: alternating list of shell commands and their outputs, e.g. ['$ whoami', 'nipun'].
+    Each line animates in sequentially via CSS @keyframes. Blinking cursor at end.
+    """
     return terminal_emulator.create_typing_svg(commands, theme)
 
 @mcp.tool()
-def generate_animated_icon_marquee(icons: list, theme: str) -> str:
-    """Creates CSS-driven infinitely scrolling horizontal bands of technology logos."""
-    return icon_marquee.build_marquee(icons, theme)
+def generate_animated_icon_marquee(icons: list, theme: str, speed: int = 30) -> str:
+    """
+    Creates a pure SVG infinitely scrolling horizontal band of technology name badges.
+    icons: list of tech names e.g. ['Python', 'React', 'Docker']. speed: animation duration in seconds.
+    Uses CSS @keyframes with duplicated rows for seamless infinite loop. No external deps.
+    """
+    return icon_marquee.build_marquee(icons, theme, speed)
 
 @mcp.tool()
-def capture_animated_banner_gif(theme: str, lines: list, path: str) -> str:
-    """Invokes Playwright to render complex HTML terminal typing animations into looping GIFs."""
+def capture_animated_banner_gif(theme: str, lines: list, path: str = "") -> str:
+    """
+    Generates a pure SVG animated banner (800x200) with gradient background and sequential text fade-in.
+    lines: list of text lines to display. No Playwright required — entirely stdlib SVG generation.
+    If path is provided, also saves the SVG to that file path.
+    """
     return animated_banner.capture_banner_gif(theme, lines, path)
 
 @mcp.tool()
-def render_github_trophies(username: str, theme: str) -> str:
-    """Aesthetically overhauls GitHub trophies into custom SVGs."""
-    return github_trophies.generate_trophy_case(username, theme)
+def render_github_trophies(username: str, theme: str, stats: dict = {}) -> str:
+    """
+    Generates an 800x200 SVG trophy case with up to 6 trophies (Stars, Commits, PRs, Issues, Repos, Followers).
+    stats: dict with integer values e.g. {'stars': 150, 'commits': 1200, 'prs': 45}.
+    Trophies are ranked S/A/B/C (gold/silver/bronze/default). S-rank trophies have animated glow.
+    """
+    return github_trophies.generate_trophy_case(username, theme, stats or None)
 
 def main():
     """Main entrypoint hook for the pyproject.toml package."""
