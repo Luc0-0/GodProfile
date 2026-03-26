@@ -29,7 +29,7 @@ jobs:
         run: ruff check src/
 
       - name: Import check
-        run: python -c "from godprofile_mcp.server import mcp; print(f'OK — {len(mcp._tools)} tools registered')"
+        run: python -c "from godprofile_mcp.server import mcp; print('OK — GodProfile MCP server loaded')"
 
       - name: Run tests
         run: |
