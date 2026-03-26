@@ -11,7 +11,7 @@
   <rect width="800" height="200" fill="url(#bgGrad)" rx="12"/>
 
   <!-- Header -->
-  <text x="16" y="22" font-family=""Segoe UI", Inter, sans-serif" font-size="13"
+  <text x="16" y="22" font-family="Segoe UI, Inter, sans-serif" font-size="13"
         font-weight="bold" fill="#b6a891" opacity="0.8">
     nipunnirwana — Trophy Case
   </text>
@@ -35,13 +35,13 @@
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">Stars</text>
     <!-- Value -->
     <text x="60" y="124" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="14" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
           fill="#c0c0c0">340</text>
     <!-- Rank tier badge -->
     <rect x="48" y="134" width="24" height="16" rx="4"
           fill="#c0c0c0" opacity="0.2"/>
     <text x="60" y="146" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="11" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
   <!-- Trophy: Commits (rank A) -->
@@ -62,13 +62,13 @@
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">Commits</text>
     <!-- Value -->
     <text x="60" y="124" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="14" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
           fill="#c0c0c0">2.1k</text>
     <!-- Rank tier badge -->
     <rect x="48" y="134" width="24" height="16" rx="4"
           fill="#c0c0c0" opacity="0.2"/>
     <text x="60" y="146" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="11" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
   <!-- Trophy: PRs (rank A) -->
@@ -89,13 +89,13 @@
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">PRs</text>
     <!-- Value -->
     <text x="60" y="124" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="14" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
           fill="#c0c0c0">87</text>
     <!-- Rank tier badge -->
     <rect x="48" y="134" width="24" height="16" rx="4"
           fill="#c0c0c0" opacity="0.2"/>
     <text x="60" y="146" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="11" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
   <!-- Trophy: Issues (rank A) -->
@@ -116,13 +116,13 @@
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">Issues</text>
     <!-- Value -->
     <text x="60" y="124" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="14" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
           fill="#c0c0c0">54</text>
     <!-- Rank tier badge -->
     <rect x="48" y="134" width="24" height="16" rx="4"
           fill="#c0c0c0" opacity="0.2"/>
     <text x="60" y="146" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="11" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
   <!-- Trophy: Repos (rank A) -->
@@ -143,13 +143,13 @@
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">Repos</text>
     <!-- Value -->
     <text x="60" y="124" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="14" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
           fill="#c0c0c0">42</text>
     <!-- Rank tier badge -->
     <rect x="48" y="134" width="24" height="16" rx="4"
           fill="#c0c0c0" opacity="0.2"/>
     <text x="60" y="146" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="11" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
   <!-- Trophy: Followers (rank A) -->
@@ -170,13 +170,13 @@
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">Followers</text>
     <!-- Value -->
     <text x="60" y="124" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="14" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
           fill="#c0c0c0">310</text>
     <!-- Rank tier badge -->
     <rect x="48" y="134" width="24" height="16" rx="4"
           fill="#c0c0c0" opacity="0.2"/>
     <text x="60" y="146" text-anchor="middle"
-          font-family=""Segoe UI", Inter, sans-serif" font-size="11" font-weight="bold"
+          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
 </svg>

@@ -6,7 +6,7 @@ THEMES = {
         "accent": "#b6a891",
         "text": "#eceff4",
         "border": "#2b303a",
-        "font_family_header": '"Segoe UI", Inter, sans-serif',
+        "font_family_header": "Segoe UI, Inter, sans-serif",
         "font_family_data": "Consolas, monospace"
     },
     "terminal-hacker": {

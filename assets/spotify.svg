@@ -31,8 +31,8 @@
     <rect x="46" y="14" width="4" rx="2" height="10" fill="#1db954" style="animation:eq3 0.7s ease-in-out infinite;transform-origin:46px 24px"/>
 
   <!-- Track info -->
-  <text x="86" y="34" font-family=""Segoe UI", Inter, sans-serif" font-size="14" font-weight="700" fill="#eceff4">Blinding Lights</text>
-  <text x="86" y="52" font-family=""Segoe UI", Inter, sans-serif" font-size="11" fill="#eceff4" opacity="0.55">The Weeknd</text>
+  <text x="86" y="34" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="700" fill="#eceff4">Blinding Lights</text>
+  <text x="86" y="52" font-family="Segoe UI, Inter, sans-serif" font-size="11" fill="#eceff4" opacity="0.55">The Weeknd</text>
 
   <!-- Footer -->
   <text x="86" y="80" font-family="Consolas, monospace" font-size="9" fill="#1db954" opacity="0.75">Now Playing · Listening on Spotify</text>
