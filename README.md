@@ -20,10 +20,10 @@
 <br/>
 
 > Give Claude Desktop this server and say: **_"Make my GitHub profile god-tier."_**
-> It ships 13 tools that generate glassmorphic SVGs, animated banners, live data widgets,
+> It ships 16 tools that generate glassmorphic SVGs, animated banners, live data widgets,
 > bento-grid layouts, and full GitHub Actions CI — all from a single MCP config line.
 
-[Quick Install](#-quick-install) · [Tools](#-13-tools) · [Themes](#-4-themes) · [MCP Config](#-mcp-config) · [Contributing](#-contributing)
+[Quick Install](#-quick-install) · [Tools](#-16-tools) · [Themes](#-4-themes) · [MCP Config](#-mcp-config) · [Contributing](#-contributing)
 
 </div>
 
@@ -139,7 +139,9 @@ Restart Claude Desktop, then try:
 
 <img src="assets/divider.svg" width="100%"/>
 
-## 13 Tools
+## 16 Tools
+
+### Render Tools — pass your own data, get SVG back
 
 | Tool | What it generates |
 |------|-------------------|
@@ -147,15 +149,23 @@ Restart Claude Desktop, then try:
 | `render_svg_widget` | Glassmorphic SVG stat cards with 12px borders + theme tokens |
 | `generate_neural_network_map` | Animated Bezier-connected tech stack visualization |
 | `setup_github_automation` | GitHub Actions workflows for automated stat sync |
-| `render_spotify_now_playing` | "Now Playing" card with animated equalizer bars |
-| `render_wakatime_activity_chart` | Horizontal bar chart of weekly coding language breakdown |
+| `render_spotify_now_playing` | "Now Playing" card with animated equalizer bars (placeholder) |
+| `render_wakatime_activity_chart` | Horizontal bar chart from provided language percentages |
 | `setup_contribution_snake` | Snake game eating your contribution grid (custom themed) |
 | `render_3d_contribution_globe` | Isometric 3D globe using real lat/lon projection math |
 | `fetch_latest_blog_posts` | RSS/Atom feed → styled SVG card of latest posts |
 | `render_terminal_emulator_svg` | Animated typewriter terminal with macOS window chrome |
 | `generate_animated_icon_marquee` | Infinite CSS-scrolling band of tech name badges |
 | `capture_animated_banner_gif` | Pure SVG animated banner with gradient + sequential fade-in |
-| `render_github_trophies` | Custom SVG trophy case with tier rankings (S/A/B/C) |
+| `render_github_trophies` | Trophy case from provided stats dict, S/A/B/C tier rankings |
+
+### Live-Fetch Tools — hit real APIs, get live SVG back
+
+| Tool | What it fetches |
+|------|-----------------|
+| `fetch_github_trophies_live` | Pulls real stars/commits/PRs/repos/followers from GitHub API, renders trophy case |
+| `fetch_wakatime_chart_live` | Calls WakaTime API with your key → renders last 7 days language chart |
+| `fetch_spotify_now_playing_live` | Calls Spotify API with OAuth token → renders current track card |
 
 ## 4 Themes
 
