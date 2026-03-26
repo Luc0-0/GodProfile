@@ -2,7 +2,6 @@ import os
 import sys
 
 from mcp.server.fastmcp import FastMCP
-from pydantic import BaseModel, Field
 
 # Ensure the core is importable
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
@@ -151,9 +150,12 @@ def render_github_trophies(username: str, theme: str, stats: dict = {}) -> str:
 
 def main():
     """Main entrypoint hook for the pyproject.toml package."""
-    # Ensure modules containing decorators are loaded so they register on the `mcp` instance
-    from . import prompts, resources
-    
+    # These imports trigger decorator registration on the `mcp` instance — required at startup
+    from . import (
+        prompts,  # noqa: F401
+        resources,  # noqa: F401
+    )
+
     mcp.run()
 
 if __name__ == "__main__":

@@ -9,16 +9,14 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 from godprofile_mcp.core import (
-    bento_layout,
-    neural_bezier_engine,
-    terminal_emulator,
-    icon_marquee,
     animated_banner,
     github_trophies,
-    wakatime_metrics,
-    spotify_now_playing,
-    blog_fetcher,
+    icon_marquee,
     isometric_3d_globe,
+    neural_bezier_engine,
+    spotify_now_playing,
+    terminal_emulator,
+    wakatime_metrics,
 )
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "output")
@@ -60,7 +58,7 @@ def main():
 
     print("Generating GitHub trophies...")
     svg = github_trophies.generate_trophy_case(
-        username="nipunnirwana",
+        username="godprofile",
         theme=theme,
         stats={"stars": 340, "commits": 2100, "prs": 87, "issues": 54, "repos": 42, "followers": 310},
     )

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="230" viewBox="0 0 800 230">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0b0f14"/>
@@ -8,175 +8,166 @@
   </defs>
 
   <!-- Background -->
-  <rect width="800" height="200" fill="url(#bgGrad)" rx="12"/>
+  <rect width="800" height="230" fill="url(#bgGrad)" rx="12"/>
 
   <!-- Header -->
-  <text x="16" y="22" font-family="Segoe UI, Inter, sans-serif" font-size="13"
-        font-weight="bold" fill="#b6a891" opacity="0.8">
-    nipunnirwana — Trophy Case
-  </text>
+  <text x="16" y="24" font-family="Segoe UI, Inter, sans-serif" font-size="12"
+        font-weight="bold" fill="#b6a891" opacity="0.7"
+        letter-spacing="1">TROPHY CASE</text>
+  <text x="200" y="24" font-family="Consolas, monospace" font-size="11"
+        fill="#eceff4" opacity="0.4">@godprofile</text>
+  <line x1="16" y1="32" x2="784" y2="32" stroke="#b6a891"
+        stroke-width="0.5" opacity="0.2"/>
 
   <!-- Trophy cards -->
   <!-- Trophy: Stars (rank A) -->
-  <g transform="translate(11,20)">
-    <rect width="120" height="160" rx="10" ry="10"
-          fill="#151c25" fill-opacity="0.75"
-          stroke="#c0c0c0" stroke-width="1.5" opacity="0.95"
-          />
+  <g transform="translate(11,48)">
+    <rect width="120" height="170" rx="10" ry="10"
+          fill="#151c25" fill-opacity="0.8"
+          stroke="#c0c0c0" stroke-width="1.5" >
+    </rect>
     
     <!-- Cup icon -->
-    <g transform="translate(60,52)" fill="#c0c0c0" opacity="0.9">
+    <g transform="translate(60,62)" fill="#c0c0c0" opacity="0.9">
       <path d="M-16,-24 L16,-24 L20,-8 C20,4 12,12 4,14 L4,20 L10,20 L10,26 L-10,26 L-10,20 L-4,20 L-4,14 C-12,12 -20,4 -20,-8 Z M-22,-24 L-16,-24 L-16,-10 C-20,-12 -22,-18 -22,-24 Z M22,-24 L16,-24 L16,-10 C20,-12 22,-18 22,-24 Z"/>
     </g>
-    <!-- Star accent for S rank -->
-    
     <!-- Title -->
-    <text x="60" y="108" text-anchor="middle"
+    <text x="60" y="115" text-anchor="middle"
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">Stars</text>
     <!-- Value -->
-    <text x="60" y="124" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
+    <text x="60" y="132" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="bold"
           fill="#c0c0c0">340</text>
-    <!-- Rank tier badge -->
-    <rect x="48" y="134" width="24" height="16" rx="4"
-          fill="#c0c0c0" opacity="0.2"/>
-    <text x="60" y="146" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
+    <!-- Rank badge -->
+    <rect x="47" y="142" width="26" height="18" rx="5"
+          fill="#c0c0c0" opacity="0.18"/>
+    <text x="60" y="156" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
   <!-- Trophy: Commits (rank A) -->
-  <g transform="translate(142,20)">
-    <rect width="120" height="160" rx="10" ry="10"
-          fill="#151c25" fill-opacity="0.75"
-          stroke="#c0c0c0" stroke-width="1.5" opacity="0.95"
-          />
+  <g transform="translate(142,48)">
+    <rect width="120" height="170" rx="10" ry="10"
+          fill="#151c25" fill-opacity="0.8"
+          stroke="#c0c0c0" stroke-width="1.5" >
+    </rect>
     
     <!-- Cup icon -->
-    <g transform="translate(60,52)" fill="#c0c0c0" opacity="0.9">
+    <g transform="translate(60,62)" fill="#c0c0c0" opacity="0.9">
       <path d="M-16,-24 L16,-24 L20,-8 C20,4 12,12 4,14 L4,20 L10,20 L10,26 L-10,26 L-10,20 L-4,20 L-4,14 C-12,12 -20,4 -20,-8 Z M-22,-24 L-16,-24 L-16,-10 C-20,-12 -22,-18 -22,-24 Z M22,-24 L16,-24 L16,-10 C20,-12 22,-18 22,-24 Z"/>
     </g>
-    <!-- Star accent for S rank -->
-    
     <!-- Title -->
-    <text x="60" y="108" text-anchor="middle"
+    <text x="60" y="115" text-anchor="middle"
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">Commits</text>
     <!-- Value -->
-    <text x="60" y="124" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
+    <text x="60" y="132" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="bold"
           fill="#c0c0c0">2.1k</text>
-    <!-- Rank tier badge -->
-    <rect x="48" y="134" width="24" height="16" rx="4"
-          fill="#c0c0c0" opacity="0.2"/>
-    <text x="60" y="146" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
+    <!-- Rank badge -->
+    <rect x="47" y="142" width="26" height="18" rx="5"
+          fill="#c0c0c0" opacity="0.18"/>
+    <text x="60" y="156" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
   <!-- Trophy: PRs (rank A) -->
-  <g transform="translate(273,20)">
-    <rect width="120" height="160" rx="10" ry="10"
-          fill="#151c25" fill-opacity="0.75"
-          stroke="#c0c0c0" stroke-width="1.5" opacity="0.95"
-          />
+  <g transform="translate(273,48)">
+    <rect width="120" height="170" rx="10" ry="10"
+          fill="#151c25" fill-opacity="0.8"
+          stroke="#c0c0c0" stroke-width="1.5" >
+    </rect>
     
     <!-- Cup icon -->
-    <g transform="translate(60,52)" fill="#c0c0c0" opacity="0.9">
+    <g transform="translate(60,62)" fill="#c0c0c0" opacity="0.9">
       <path d="M-16,-24 L16,-24 L20,-8 C20,4 12,12 4,14 L4,20 L10,20 L10,26 L-10,26 L-10,20 L-4,20 L-4,14 C-12,12 -20,4 -20,-8 Z M-22,-24 L-16,-24 L-16,-10 C-20,-12 -22,-18 -22,-24 Z M22,-24 L16,-24 L16,-10 C20,-12 22,-18 22,-24 Z"/>
     </g>
-    <!-- Star accent for S rank -->
-    
     <!-- Title -->
-    <text x="60" y="108" text-anchor="middle"
+    <text x="60" y="115" text-anchor="middle"
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">PRs</text>
     <!-- Value -->
-    <text x="60" y="124" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
+    <text x="60" y="132" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="bold"
           fill="#c0c0c0">87</text>
-    <!-- Rank tier badge -->
-    <rect x="48" y="134" width="24" height="16" rx="4"
-          fill="#c0c0c0" opacity="0.2"/>
-    <text x="60" y="146" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
+    <!-- Rank badge -->
+    <rect x="47" y="142" width="26" height="18" rx="5"
+          fill="#c0c0c0" opacity="0.18"/>
+    <text x="60" y="156" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
   <!-- Trophy: Issues (rank A) -->
-  <g transform="translate(404,20)">
-    <rect width="120" height="160" rx="10" ry="10"
-          fill="#151c25" fill-opacity="0.75"
-          stroke="#c0c0c0" stroke-width="1.5" opacity="0.95"
-          />
+  <g transform="translate(404,48)">
+    <rect width="120" height="170" rx="10" ry="10"
+          fill="#151c25" fill-opacity="0.8"
+          stroke="#c0c0c0" stroke-width="1.5" >
+    </rect>
     
     <!-- Cup icon -->
-    <g transform="translate(60,52)" fill="#c0c0c0" opacity="0.9">
+    <g transform="translate(60,62)" fill="#c0c0c0" opacity="0.9">
       <path d="M-16,-24 L16,-24 L20,-8 C20,4 12,12 4,14 L4,20 L10,20 L10,26 L-10,26 L-10,20 L-4,20 L-4,14 C-12,12 -20,4 -20,-8 Z M-22,-24 L-16,-24 L-16,-10 C-20,-12 -22,-18 -22,-24 Z M22,-24 L16,-24 L16,-10 C20,-12 22,-18 22,-24 Z"/>
     </g>
-    <!-- Star accent for S rank -->
-    
     <!-- Title -->
-    <text x="60" y="108" text-anchor="middle"
+    <text x="60" y="115" text-anchor="middle"
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">Issues</text>
     <!-- Value -->
-    <text x="60" y="124" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
+    <text x="60" y="132" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="bold"
           fill="#c0c0c0">54</text>
-    <!-- Rank tier badge -->
-    <rect x="48" y="134" width="24" height="16" rx="4"
-          fill="#c0c0c0" opacity="0.2"/>
-    <text x="60" y="146" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
+    <!-- Rank badge -->
+    <rect x="47" y="142" width="26" height="18" rx="5"
+          fill="#c0c0c0" opacity="0.18"/>
+    <text x="60" y="156" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
   <!-- Trophy: Repos (rank A) -->
-  <g transform="translate(535,20)">
-    <rect width="120" height="160" rx="10" ry="10"
-          fill="#151c25" fill-opacity="0.75"
-          stroke="#c0c0c0" stroke-width="1.5" opacity="0.95"
-          />
+  <g transform="translate(535,48)">
+    <rect width="120" height="170" rx="10" ry="10"
+          fill="#151c25" fill-opacity="0.8"
+          stroke="#c0c0c0" stroke-width="1.5" >
+    </rect>
     
     <!-- Cup icon -->
-    <g transform="translate(60,52)" fill="#c0c0c0" opacity="0.9">
+    <g transform="translate(60,62)" fill="#c0c0c0" opacity="0.9">
       <path d="M-16,-24 L16,-24 L20,-8 C20,4 12,12 4,14 L4,20 L10,20 L10,26 L-10,26 L-10,20 L-4,20 L-4,14 C-12,12 -20,4 -20,-8 Z M-22,-24 L-16,-24 L-16,-10 C-20,-12 -22,-18 -22,-24 Z M22,-24 L16,-24 L16,-10 C20,-12 22,-18 22,-24 Z"/>
     </g>
-    <!-- Star accent for S rank -->
-    
     <!-- Title -->
-    <text x="60" y="108" text-anchor="middle"
+    <text x="60" y="115" text-anchor="middle"
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">Repos</text>
     <!-- Value -->
-    <text x="60" y="124" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
+    <text x="60" y="132" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="bold"
           fill="#c0c0c0">42</text>
-    <!-- Rank tier badge -->
-    <rect x="48" y="134" width="24" height="16" rx="4"
-          fill="#c0c0c0" opacity="0.2"/>
-    <text x="60" y="146" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
+    <!-- Rank badge -->
+    <rect x="47" y="142" width="26" height="18" rx="5"
+          fill="#c0c0c0" opacity="0.18"/>
+    <text x="60" y="156" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
   <!-- Trophy: Followers (rank A) -->
-  <g transform="translate(666,20)">
-    <rect width="120" height="160" rx="10" ry="10"
-          fill="#151c25" fill-opacity="0.75"
-          stroke="#c0c0c0" stroke-width="1.5" opacity="0.95"
-          />
+  <g transform="translate(666,48)">
+    <rect width="120" height="170" rx="10" ry="10"
+          fill="#151c25" fill-opacity="0.8"
+          stroke="#c0c0c0" stroke-width="1.5" >
+    </rect>
     
     <!-- Cup icon -->
-    <g transform="translate(60,52)" fill="#c0c0c0" opacity="0.9">
+    <g transform="translate(60,62)" fill="#c0c0c0" opacity="0.9">
       <path d="M-16,-24 L16,-24 L20,-8 C20,4 12,12 4,14 L4,20 L10,20 L10,26 L-10,26 L-10,20 L-4,20 L-4,14 C-12,12 -20,4 -20,-8 Z M-22,-24 L-16,-24 L-16,-10 C-20,-12 -22,-18 -22,-24 Z M22,-24 L16,-24 L16,-10 C20,-12 22,-18 22,-24 Z"/>
     </g>
-    <!-- Star accent for S rank -->
-    
     <!-- Title -->
-    <text x="60" y="108" text-anchor="middle"
+    <text x="60" y="115" text-anchor="middle"
           font-family="Consolas, monospace" font-size="11" fill="#eceff4">Followers</text>
     <!-- Value -->
-    <text x="60" y="124" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="bold"
+    <text x="60" y="132" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="15" font-weight="bold"
           fill="#c0c0c0">310</text>
-    <!-- Rank tier badge -->
-    <rect x="48" y="134" width="24" height="16" rx="4"
-          fill="#c0c0c0" opacity="0.2"/>
-    <text x="60" y="146" text-anchor="middle"
-          font-family="Segoe UI, Inter, sans-serif" font-size="11" font-weight="bold"
+    <!-- Rank badge -->
+    <rect x="47" y="142" width="26" height="18" rx="5"
+          fill="#c0c0c0" opacity="0.18"/>
+    <text x="60" y="156" text-anchor="middle"
+          font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="bold"
           fill="#c0c0c0">A</text>
   </g>
 </svg>

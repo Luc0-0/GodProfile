@@ -1,4 +1,3 @@
-import json
 
 
 def _get_theme_tokens(theme_name: str) -> dict:

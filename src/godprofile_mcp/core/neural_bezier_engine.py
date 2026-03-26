@@ -40,23 +40,23 @@ def generate_map(tech_stack: dict, theme: str) -> str:
     svg = []
     svg.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">')
     svg.append('  <defs>')
-    svg.append(f'    <linearGradient id="nbg" x1="0%" y1="0%" x2="100%" y2="100%">')
+    svg.append('    <linearGradient id="nbg" x1="0%" y1="0%" x2="100%" y2="100%">')
     svg.append(f'      <stop offset="0%" stop-color="{bg1}"/>')
     svg.append(f'      <stop offset="100%" stop-color="{bg2}"/>')
-    svg.append(f'    </linearGradient>')
+    svg.append('    </linearGradient>')
 
     # Radial gradient for each node glow
-    svg.append(f'    <radialGradient id="nglow" cx="50%" cy="50%" r="50%">')
+    svg.append('    <radialGradient id="nglow" cx="50%" cy="50%" r="50%">')
     svg.append(f'      <stop offset="0%" stop-color="{accent}" stop-opacity="0.9"/>')
     svg.append(f'      <stop offset="60%" stop-color="{accent}" stop-opacity="0.4"/>')
     svg.append(f'      <stop offset="100%" stop-color="{accent}" stop-opacity="0"/>')
-    svg.append(f'    </radialGradient>')
+    svg.append('    </radialGradient>')
 
     # Glow filter
-    svg.append(f'    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">')
-    svg.append(f'      <feGaussianBlur stdDeviation="4" result="blur"/>')
-    svg.append(f'      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>')
-    svg.append(f'    </filter>')
+    svg.append('    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">')
+    svg.append('      <feGaussianBlur stdDeviation="4" result="blur"/>')
+    svg.append('      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>')
+    svg.append('    </filter>')
     svg.append('  </defs>')
 
     # Background
@@ -78,7 +78,7 @@ def generate_map(tech_stack: dict, theme: str) -> str:
         dur = 2.5 + (i % 3) * 0.7
         svg.append(f'  <circle r="2.5" fill="{accent}" opacity="0.9" filter="url(#glow)">')
         svg.append(f'    <animateMotion dur="{dur}s" repeatCount="indefinite" path="{path}"/>')
-        svg.append(f'  </circle>')
+        svg.append('  </circle>')
 
     # Draw nodes + labels
     for col_i, (cat, techs) in enumerate(categories):

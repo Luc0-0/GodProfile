@@ -1,4 +1,3 @@
-import json
 
 
 def setup_contribution_snake(theme: str, repo_path: str) -> str:

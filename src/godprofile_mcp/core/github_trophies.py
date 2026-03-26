@@ -101,10 +101,11 @@ def generate_trophy_case(username: str, theme: str, stats: Optional[dict] = None
         ("Followers", defaults["followers"]),
     ]
 
-    width, height = 800, 200
-    card_w, card_h = 120, 160
+    width, height = 800, 230
+    header_h = 36
+    card_w, card_h = 120, 170
     padding_x = (width - len(trophies) * card_w) // (len(trophies) + 1)
-    start_y = (height - card_h) // 2
+    start_y = header_h + (height - header_h - card_h) // 2  # vertically center below header
 
     card_groups = []
     for idx, (name, value) in enumerate(trophies):
@@ -113,42 +114,48 @@ def generate_trophy_case(username: str, theme: str, stats: Optional[dict] = None
         cx = padding_x + idx * (card_w + padding_x) + card_w // 2
         cy = start_y
 
-        # Glow animation for S-rank
+        # S-rank: glow filter + rect pulse animation (animate inside rect)
         glow_filter = ""
-        anim_el = ""
+        anim_inside_rect = ""
         filter_def_id = f"sglow{idx}"
         if rank == "S":
             glow_filter = f'filter="url(#{filter_def_id})"'
-            anim_el = (
-                f'<animate attributeName="opacity" values="0.85;1;0.85" '
-                f'dur="2s" repeatCount="indefinite"/>'
+            anim_inside_rect = (
+                '\n      <animate attributeName="opacity" '
+                'values="0.85;1;0.85" dur="2s" repeatCount="indefinite"/>'
+            )
+
+        star_el = ""
+        if rank == "S":
+            star_el = (
+                f'<g transform="translate({card_w // 2},20)" '
+                f'fill="{rank_color}" opacity="0.9">'
+                f'<path d="{_STAR_PATH}"/></g>'
             )
 
         card = f"""  <!-- Trophy: {name} (rank {rank}) -->
   <g transform="translate({cx - card_w // 2},{cy})">
     <rect width="{card_w}" height="{card_h}" rx="10" ry="10"
-          fill="{bg2}" fill-opacity="0.75"
-          stroke="{rank_color}" stroke-width="1.5" opacity="0.95"
-          {glow_filter}/>
-    {anim_el}
+          fill="{bg2}" fill-opacity="0.8"
+          stroke="{rank_color}" stroke-width="1.5" {glow_filter}>{anim_inside_rect}
+    </rect>
+    {star_el}
     <!-- Cup icon -->
-    <g transform="translate({card_w // 2},{52})" fill="{rank_color}" opacity="0.9">
+    <g transform="translate({card_w // 2},62)" fill="{rank_color}" opacity="0.9">
       <path d="{_TROPHY_CUP_PATH}"/>
     </g>
-    <!-- Star accent for S rank -->
-    {'<g transform="translate(' + str(card_w // 2) + ',18)" fill="' + rank_color + '" opacity="0.8"><path d="' + _STAR_PATH + '"/></g>' if rank == "S" else ''}
     <!-- Title -->
-    <text x="{card_w // 2}" y="{card_h - 52}" text-anchor="middle"
+    <text x="{card_w // 2}" y="{card_h - 55}" text-anchor="middle"
           font-family="{font_data}" font-size="11" fill="{text_color}">{name}</text>
     <!-- Value -->
-    <text x="{card_w // 2}" y="{card_h - 36}" text-anchor="middle"
-          font-family="{font_header}" font-size="14" font-weight="bold"
+    <text x="{card_w // 2}" y="{card_h - 38}" text-anchor="middle"
+          font-family="{font_header}" font-size="15" font-weight="bold"
           fill="{rank_color}">{_format_value(value)}</text>
-    <!-- Rank tier badge -->
-    <rect x="{card_w // 2 - 12}" y="{card_h - 26}" width="24" height="16" rx="4"
-          fill="{rank_color}" opacity="0.2"/>
+    <!-- Rank badge -->
+    <rect x="{card_w // 2 - 13}" y="{card_h - 28}" width="26" height="18" rx="5"
+          fill="{rank_color}" opacity="0.18"/>
     <text x="{card_w // 2}" y="{card_h - 14}" text-anchor="middle"
-          font-family="{font_header}" font-size="11" font-weight="bold"
+          font-family="{font_header}" font-size="12" font-weight="bold"
           fill="{rank_color}">{rank}</text>
   </g>"""
         card_groups.append(card)
@@ -185,10 +192,13 @@ def generate_trophy_case(username: str, theme: str, stats: Optional[dict] = None
   <rect width="{width}" height="{height}" fill="url(#bgGrad)" rx="12"/>
 
   <!-- Header -->
-  <text x="16" y="22" font-family="{font_header}" font-size="13"
-        font-weight="bold" fill="{accent_color}" opacity="0.8">
-    {username} — Trophy Case
-  </text>
+  <text x="16" y="24" font-family="{font_header}" font-size="12"
+        font-weight="bold" fill="{accent_color}" opacity="0.7"
+        letter-spacing="1">TROPHY CASE</text>
+  <text x="200" y="24" font-family="{font_data}" font-size="11"
+        fill="{text_color}" opacity="0.4">@{username}</text>
+  <line x1="16" y1="32" x2="784" y2="32" stroke="{accent_color}"
+        stroke-width="0.5" opacity="0.2"/>
 
   <!-- Trophy cards -->
 {cards_block}
