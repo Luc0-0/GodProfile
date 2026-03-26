@@ -10,10 +10,19 @@ sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 # We will implement these modules sequentially.
 try:
     from core import (
-        bento_layout, svg_rendering, neural_bezier_engine, github_ci_automation,
-        spotify_now_playing, wakatime_metrics, snake_game_injector,
-        isometric_3d_globe, blog_fetcher, terminal_emulator, icon_marquee,
-        animated_banner, github_trophies
+        animated_banner,
+        bento_layout,
+        blog_fetcher,
+        github_ci_automation,
+        github_trophies,
+        icon_marquee,
+        isometric_3d_globe,
+        neural_bezier_engine,
+        snake_game_injector,
+        spotify_now_playing,
+        svg_rendering,
+        terminal_emulator,
+        wakatime_metrics,
     )
 except ImportError:
     pass
@@ -143,8 +152,7 @@ def render_github_trophies(username: str, theme: str, stats: dict = {}) -> str:
 def main():
     """Main entrypoint hook for the pyproject.toml package."""
     # Ensure modules containing decorators are loaded so they register on the `mcp` instance
-    from . import resources
-    from . import prompts
+    from . import prompts, resources
     
     mcp.run()
 

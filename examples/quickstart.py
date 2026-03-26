@@ -52,8 +52,8 @@ def main():
 
     print("Generating animated banner...")
     svg = animated_banner.generate_banner(
-        title="Nipun Nirwana",
-        subtitle="Building things that matter",
+        title="GodProfile",
+        subtitle="MCP Toolkit — forge god-tier GitHub profiles",
         theme=theme,
     )
     save("banner.svg", svg)

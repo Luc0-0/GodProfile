@@ -4,9 +4,9 @@ stdlib only: urllib, xml.etree.ElementTree
 """
 
 import xml.etree.ElementTree as ET
-from urllib.request import urlopen, Request
-from urllib.error import URLError, HTTPError
 from html import escape
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 
 
 def _get_theme_tokens(theme_name: str) -> dict:

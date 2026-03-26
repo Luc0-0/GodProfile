@@ -1,5 +1,6 @@
 import os
 
+
 def generate_ci_workflow(features: list, repo_path: str) -> str:
     """
     Generates backend scraping cron jobs and CI pipelines.

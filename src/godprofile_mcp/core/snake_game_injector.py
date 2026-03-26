@@ -1,5 +1,6 @@
 import json
 
+
 def setup_contribution_snake(theme: str, repo_path: str) -> str:
     """
     Generates the GitHub Action YAML (`snake.yml`) calling Platane/snk/svg-only.

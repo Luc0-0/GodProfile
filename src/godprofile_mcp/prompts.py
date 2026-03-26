@@ -1,5 +1,6 @@
 from .server import mcp
 
+
 @mcp.prompt()
 def godprofile_aesthetic_guide() -> str:
     """The strict aesthetic rules for generating GodProfile assets. Agents MUST read this before rendering."""

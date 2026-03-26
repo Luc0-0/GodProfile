@@ -5,8 +5,8 @@ No external dependencies beyond urllib.
 """
 
 import json
-import urllib.request
 import urllib.error
+import urllib.request
 
 
 def _get_theme_tokens(theme_name: str) -> dict:

@@ -120,7 +120,8 @@ def capture_banner_gif(theme: str, lines: list, path: str) -> str:
 
 def generate_banner(title: str, subtitle: str, theme: str) -> str:
     """
-    Creates a simple 800x160 SVG banner with title + subtitle and fade-in animation.
+    Creates an 800x160 SVG project banner with a geometric logo, title, subtitle,
+    accent underline, and fade-in animation. Designed for README headers.
 
     Args:
         title: main heading text
@@ -137,27 +138,42 @@ def generate_banner(title: str, subtitle: str, theme: str) -> str:
     font_header = tokens.get("font_family_header", "sans-serif")
     font_data = tokens.get("font_family_data", "monospace")
 
-    width = 800
-    height = 160
+    width, height = 800, 160
+    cx, cy = 80, 80  # logo center
 
-    css = """
-    @keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-    .title    { opacity: 0; animation: fadein 0.8s 0.1s ease forwards; }
-    .subtitle { opacity: 0; animation: fadein 0.8s 0.6s ease forwards; }
-    """
+    # Geometric logo: central node + 6 orbital nodes connected by lines
+    orbital_r = 28
+    node_angles = [0, 60, 120, 180, 240, 300]
+    import math
+    orbitals = [
+        (cx + orbital_r * math.cos(math.radians(a)),
+         cy + orbital_r * math.sin(math.radians(a)))
+        for a in node_angles
+    ]
+
+    # Build spoke lines and orbital dots
+    spokes = "".join(
+        f'<line x1="{cx}" y1="{cy}" x2="{ox:.1f}" y2="{oy:.1f}" '
+        f'stroke="{accent}" stroke-width="1" opacity="0.35"/>'
+        for ox, oy in orbitals
+    )
+    orbit_dots = "".join(
+        f'<circle cx="{ox:.1f}" cy="{oy:.1f}" r="3" fill="{accent}" opacity="0.6"/>'
+        for ox, oy in orbitals
+    )
 
     safe_title = (
-        title.replace("&", "&amp;")
-             .replace("<", "&lt;")
-             .replace(">", "&gt;")
-             .replace('"', "&quot;")
+        title.replace("&", "&amp;").replace("<", "&lt;")
+             .replace(">", "&gt;").replace('"', "&quot;")
     )
     safe_subtitle = (
-        subtitle.replace("&", "&amp;")
-                .replace("<", "&lt;")
-                .replace(">", "&gt;")
-                .replace('"', "&quot;")
+        subtitle.replace("&", "&amp;").replace("<", "&lt;")
+                .replace(">", "&gt;").replace('"', "&quot;")
     )
+
+    # Underline width based on title length
+    underline_w = min(len(title) * 14, 320)
+    text_x = 130
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   <defs>
@@ -165,27 +181,46 @@ def generate_banner(title: str, subtitle: str, theme: str) -> str:
       <stop offset="0%" stop-color="{bg1}"/>
       <stop offset="100%" stop-color="{bg2}"/>
     </linearGradient>
+    <radialGradient id="logo-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="{accent}" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="{accent}" stop-opacity="0"/>
+    </radialGradient>
     <style>
-    {css}
+    @keyframes fadein {{ from {{ opacity: 0; transform: translateY(6px); }} to {{ opacity: 1; transform: translateY(0); }} }}
+    @keyframes pulse {{ 0%,100% {{ opacity: 0.6; }} 50% {{ opacity: 1; }} }}
+    .title    {{ opacity: 0; animation: fadein 0.8s 0.2s ease forwards; }}
+    .subtitle {{ opacity: 0; animation: fadein 0.8s 0.7s ease forwards; }}
+    .uline    {{ opacity: 0; animation: fadein 0.5s 1.1s ease forwards; }}
+    .logo-core {{ animation: pulse 2.5s ease-in-out infinite; }}
     </style>
   </defs>
 
-  <!-- Background -->
-  <rect width="{width}" height="{height}" fill="url(#bg-grad)" rx="10" ry="10"/>
+  <rect width="{width}" height="{height}" fill="url(#bg-grad)" rx="10"/>
 
-  <!-- Accent underline for title -->
-  <rect x="{width // 2 - 60}" y="90" width="120" height="3" fill="{accent}" rx="2"
-        opacity="0" style="animation: fadein 0.6s 1.0s ease forwards;"/>
+  <!-- Logo glow halo -->
+  <circle cx="{cx}" cy="{cy}" r="48" fill="url(#logo-glow)"/>
+  <!-- Logo orbit ring -->
+  <circle cx="{cx}" cy="{cy}" r="{orbital_r}" fill="none" stroke="{accent}" stroke-width="0.75" opacity="0.2"/>
+  <!-- Logo spokes -->
+  {spokes}
+  <!-- Logo orbital dots -->
+  {orbit_dots}
+  <!-- Logo core node -->
+  <circle cx="{cx}" cy="{cy}" r="7" fill="{accent}" class="logo-core"/>
+  <circle cx="{cx}" cy="{cy}" r="3" fill="{bg1}"/>
 
   <!-- Title -->
-  <text x="{width // 2}" y="72" text-anchor="middle" dominant-baseline="middle"
-        fill="{text_color}" font-family="{font_header}, sans-serif"
-        font-size="36" font-weight="bold" class="title">{safe_title}</text>
+  <text x="{text_x}" y="66" dominant-baseline="middle"
+        fill="{text_color}" font-family="{font_header}"
+        font-size="38" font-weight="bold" class="title">{safe_title}</text>
+
+  <!-- Accent underline -->
+  <rect x="{text_x}" y="84" width="{underline_w}" height="2.5" fill="{accent}" rx="1.5" class="uline"/>
 
   <!-- Subtitle -->
-  <text x="{width // 2}" y="118" text-anchor="middle" dominant-baseline="middle"
-        fill="{accent}" font-family="{font_data}, monospace"
-        font-size="16" class="subtitle">{safe_subtitle}</text>
+  <text x="{text_x}" y="112" dominant-baseline="middle"
+        fill="{accent}" font-family="{font_data}"
+        font-size="14" opacity="0.8" class="subtitle">{safe_subtitle}</text>
 </svg>'''
 
     return svg
