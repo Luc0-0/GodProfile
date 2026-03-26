@@ -13,9 +13,9 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-b6a891?labelColor=0b0f14)](https://python.org)
 [![MCP](https://img.shields.io/badge/MCP-Protocol-b6a891?labelColor=0b0f14)](https://modelcontextprotocol.io)
 [![License](https://img.shields.io/badge/License-MIT-b6a891?labelColor=0b0f14)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/nipunnirwana/GodProfile?color=b6a891&labelColor=0b0f14)](https://github.com/nipunnirwana/GodProfile/stargazers)
+[![Stars](https://img.shields.io/github/stars/Luc0-0/GodProfile?color=b6a891&labelColor=0b0f14)](https://github.com/Luc0-0/GodProfile/stargazers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-b6a891?labelColor=0b0f14)](CONTRIBUTING.md)
-[![CI](https://github.com/nipunnirwana/GodProfile/actions/workflows/ci.yml/badge.svg)](https://github.com/nipunnirwana/GodProfile/actions)
+[![CI](https://github.com/Luc0-0/GodProfile/actions/workflows/ci.yml/badge.svg)](https://github.com/Luc0-0/GodProfile/actions)
 
 <br/>
 
@@ -109,7 +109,7 @@ uvx godprofile-mcp
 pip install godprofile-mcp
 
 # Option 3 — dev mode
-git clone https://github.com/nipunnirwana/GodProfile
+git clone https://github.com/Luc0-0/GodProfile
 cd GodProfile
 pip install -e ".[dev]"
 python examples/quickstart.py   # generates all SVGs to examples/output/
