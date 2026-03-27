@@ -16,9 +16,16 @@
 [![Stars](https://img.shields.io/github/stars/Luc0-0/GodProfile?color=b6a891&labelColor=0b0f14)](https://github.com/Luc0-0/GodProfile/stargazers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-b6a891?labelColor=0b0f14)](CONTRIBUTING.md)
 [![CI](https://github.com/Luc0-0/GodProfile/actions/workflows/ci.yml/badge.svg)](https://github.com/Luc0-0/GodProfile/actions)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-%E2%86%92-b6a891?labelColor=0b0f14)](https://luc0-0.github.io/GodProfile/)
 
 <br/>
+
+**Not sure it's worth it? See 7 animated SVGs running live — no install, no signup.**
+
+<a href="https://luc0-0.github.io/GodProfile/">
+  <img src="https://img.shields.io/badge/%E2%96%B6%20%20See%20live%20demo%20%E2%80%94%20open%20in%20browser-b6a891?style=for-the-badge&labelColor=0b0f14" alt="Live Demo"/>
+</a>
+
+<br/><br/>
 
 > Give Claude Desktop this server and say: **_"Make my GitHub profile god-tier."_**
 > It ships 16 tools that generate glassmorphic SVGs, animated banners, live data widgets,

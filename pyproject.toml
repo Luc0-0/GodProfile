@@ -1,6 +1,6 @@
 [project]
 name = "godprofile-mcp"
-version = "0.2.0"
+version = "0.3.0"
 description = "MCP server for forging god-tier GitHub profiles — animated SVGs, bento grids, live data widgets, and full CI automation"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -38,9 +38,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/nipunnirwana/GodProfile"
-Repository = "https://github.com/nipunnirwana/GodProfile"
-Issues = "https://github.com/nipunnirwana/GodProfile/issues"
+Homepage = "https://github.com/Luc0-0/GodProfile"
+Repository = "https://github.com/Luc0-0/GodProfile"
+Issues = "https://github.com/Luc0-0/GodProfile/issues"
 
 [project.scripts]
 godprofile-server = "godprofile_mcp:main"
