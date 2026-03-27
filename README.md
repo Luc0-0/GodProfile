@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="GodProfile Banner" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/banner.svg" alt="GodProfile Banner" width="100%"/>
 
 <br/>
 
@@ -35,77 +35,77 @@
 
 </div>
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## Terminal SVG — `render_terminal_emulator_svg`
 
 > Animated typewriter terminal with macOS window chrome. Every line types itself in.
 
 <div align="center">
-<img src="assets/terminal.svg" width="600" alt="Terminal Emulator SVG"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/terminal.svg" width="600" alt="Terminal Emulator SVG"/>
 </div>
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## Icon Marquee — `generate_animated_icon_marquee`
 
 > Infinitely scrolling CSS-animated band of tech badges. Seamless loop, zero JavaScript.
 
 <div align="center">
-<img src="assets/icon_marquee.svg" width="800" alt="Animated Icon Marquee"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/icon_marquee.svg" width="800" alt="Animated Icon Marquee"/>
 </div>
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## Neural Network Map — `generate_neural_network_map`
 
 > Your tech stack as a Bezier-connected animated neural graph. Nodes pulse, edges flow.
 
 <div align="center">
-<img src="assets/neural_map.svg" width="800" alt="Neural Network Tech Stack Map"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/neural_map.svg" width="800" alt="Neural Network Tech Stack Map"/>
 </div>
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## GitHub Trophies — `render_github_trophies`
 
 > Custom SVG trophy case with S/A/B/C rank tiers. S-rank trophies animate with a golden glow.
 
 <div align="center">
-<img src="assets/trophies.svg" width="800" alt="GitHub Trophies"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/trophies.svg" width="800" alt="GitHub Trophies"/>
 </div>
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## WakaTime Activity — `render_wakatime_activity_chart`
 
 > Animated horizontal bar chart of your weekly coding language breakdown.
 
 <div align="center">
-<img src="assets/wakatime.svg" width="400" alt="WakaTime Coding Activity Chart"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/wakatime.svg" width="400" alt="WakaTime Coding Activity Chart"/>
 </div>
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## Spotify Now Playing — `render_spotify_now_playing`
 
 > Branded "Now Playing" card with animated equalizer bars. Syncs via GitHub Actions cron.
 
 <div align="center">
-<img src="assets/spotify.svg" width="400" alt="Spotify Now Playing Card"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/spotify.svg" width="400" alt="Spotify Now Playing Card"/>
 </div>
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## Isometric 3D Globe — `render_3d_contribution_globe`
 
 > Real spherical-to-isometric projection math. 12 longitude + 8 latitude lines. Slow animated rotation.
 
 <div align="center">
-<img src="assets/globe.svg" width="400" alt="Isometric 3D Globe"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/globe.svg" width="400" alt="Isometric 3D Globe"/>
 </div>
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## Quick Install
 
@@ -149,7 +149,7 @@ open("demo.svg", "w").write(svg)
 
 **Live preview** (no install) → [luc0-0.github.io/GodProfile](https://luc0-0.github.io/GodProfile/)
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## MCP Config
 
@@ -173,7 +173,7 @@ Restart Claude Desktop, then try:
 
 > *"Use GodProfile to rebuild my README with the luxury-glass theme, a terminal SVG showing my stack, WakaTime coding stats, and an animated icon marquee."*
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## 16 Tools
 
@@ -212,7 +212,7 @@ Restart Claude Desktop, then try:
 | `minimalist` | Clean GitHub-native light mode | `#ffffff` | `#111827` |
 | `cyberpunk` | Neon magenta/cyan high contrast | `#0d0221` | `#ff003c` |
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## Architecture
 
@@ -254,7 +254,7 @@ godprofile_mcp/
 | Works offline / no API keys required | ✅ | ❌ | ✅ |
 | Customizable themes | ✅ | limited | ✅ |
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 ## Contributing
 
@@ -278,7 +278,7 @@ Star the repo to follow progress.
 
 <div align="center">
 
-<img src="assets/divider.svg" width="100%"/>
+<img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/divider.svg" width="100%"/>
 
 Built with [FastMCP](https://github.com/jlowin/fastmcp) · Protocol by [Anthropic](https://modelcontextprotocol.io) · MIT License
 
