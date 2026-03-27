@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GodProfile MCP — Live Demo</title>
+  <meta name="description" content="16 MCP tools that generate animated SVGs for your GitHub profile. No install needed — preview every output here."/>
+  <meta property="og:title" content="GodProfile MCP — Live Demo"/>
+  <meta property="og:description" content="Turn Claude into a GitHub profile designer. Animated terminals, neural maps, trophies, Spotify cards and more."/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/banner.svg"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0b0f14;
+      --surface:  #111820;
+      --border:   #1e2530;
+      --accent:   #b6a891;
+      --text:     #d8d0c4;
+      --muted:    #5a6070;
+      --radius:   14px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 72px 24px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero img.banner {
+      width: 100%;
+      max-width: 860px;
+      margin-bottom: 32px;
+      border-radius: var(--radius);
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.8; }
+    .btn-primary { background: var(--accent); color: #0b0f14; }
+    .btn-ghost   { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+
+    /* ── INSTALL STRIP ── */
+    .install-strip {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .install-strip code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.95rem;
+      color: var(--accent);
+      background: #0b0f14;
+      padding: 8px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+    }
+    .install-strip .label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .copied-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #0b0f14;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 999;
+    }
+    .copied-toast.show { opacity: 1; }
+
+    /* ── GALLERY ── */
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .widget-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 24px;
+    }
+    .widget-grid.full { grid-template-columns: 1fr; }
+    .widget-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .widget-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .widget-card img, .widget-card object {
+      width: 100%;
+      display: block;
+      background: #0b0f14;
+    }
+    .widget-label {
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .widget-label span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+    }
+    .widget-label a {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .widget-label a:hover { color: var(--accent); }
+
+    /* ── HOW TO USE ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .step-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 8px;
+    }
+    .step-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .step-card p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .step-card pre {
+      margin-top: 10px;
+      background: #0b0f14;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 0.75rem;
+      color: var(--accent);
+      overflow-x: auto;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="banner"
+       src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/banner.svg"
+       alt="GodProfile Banner"/>
+  <h1>GodProfile MCP Toolkit</h1>
+  <p>16 tools that generate animated SVGs for your GitHub profile.<br/>
+     Give Claude this server and say: <em>"Make my profile god-tier."</em></p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="https://github.com/Luc0-0/GodProfile" target="_blank">
+      ★ Star on GitHub
+    </a>
+    <a class="btn btn-ghost" href="https://github.com/Luc0-0/GodProfile#-quick-install" target="_blank">
+      Quick Install →
+    </a>
+    <a class="btn btn-ghost" href="https://pypi.org/project/godprofile-mcp/" target="_blank">
+      PyPI Package
+    </a>
+  </div>
+</section>
+
+<!-- INSTALL STRIP -->
+<div class="install-strip">
+  <div class="label">Zero install — runs directly with uv</div>
+  <code id="install-cmd" onclick="copyInstall()">uvx godprofile-mcp</code>
+</div>
+<div class="copied-toast" id="toast">Copied!</div>
+
+<!-- GALLERY: FULL WIDTH -->
+<section class="section">
+  <div class="section-title">Live Output Gallery — every SVG generated by GodProfile</div>
+
+  <div class="widget-grid full">
+    <div class="widget-card">
+      <img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/terminal.svg"
+           alt="Terminal Emulator SVG"/>
+      <div class="widget-label">
+        <span>render_terminal_emulator_svg</span>
+        <a href="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/terminal.svg" target="_blank">raw ↗</a>
+      </div>
+    </div>
+
+    <div class="widget-card">
+      <img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/icon_marquee.svg"
+           alt="Animated Icon Marquee"/>
+      <div class="widget-label">
+        <span>generate_animated_icon_marquee</span>
+        <a href="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/icon_marquee.svg" target="_blank">raw ↗</a>
+      </div>
+    </div>
+
+    <div class="widget-card">
+      <img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/neural_map.svg"
+           alt="Neural Network Tech Stack Map"/>
+      <div class="widget-label">
+        <span>generate_neural_network_map</span>
+        <a href="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/neural_map.svg" target="_blank">raw ↗</a>
+      </div>
+    </div>
+
+    <div class="widget-card">
+      <img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/trophies.svg"
+           alt="GitHub Trophies"/>
+      <div class="widget-label">
+        <span>render_github_trophies</span>
+        <a href="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/trophies.svg" target="_blank">raw ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY: 2 COLUMN -->
+<section class="section" style="padding-top:0">
+  <div class="widget-grid">
+    <div class="widget-card">
+      <img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/wakatime.svg"
+           alt="WakaTime Activity Chart"/>
+      <div class="widget-label">
+        <span>render_wakatime_activity_chart</span>
+        <a href="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/wakatime.svg" target="_blank">raw ↗</a>
+      </div>
+    </div>
+
+    <div class="widget-card">
+      <img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/spotify.svg"
+           alt="Spotify Now Playing"/>
+      <div class="widget-label">
+        <span>render_spotify_now_playing</span>
+        <a href="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/spotify.svg" target="_blank">raw ↗</a>
+      </div>
+    </div>
+
+    <div class="widget-card">
+      <img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/globe.svg"
+           alt="Isometric 3D Globe"/>
+      <div class="widget-label">
+        <span>render_3d_contribution_globe</span>
+        <a href="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/globe.svg" target="_blank">raw ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="section" style="border-top: 1px solid var(--border); padding-top: 56px;">
+  <div class="section-title">Get started in 3 steps</div>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <h3>Install the MCP server</h3>
+      <p>Add GodProfile to your Claude Desktop config — one JSON block, no extra installs.</p>
+      <pre>{
+  "mcpServers": {
+    "godprofile": {
+      "command": "uvx",
+      "args": ["godprofile-mcp"]
+    }
+  }
+}</pre>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <h3>Ask Claude to redesign your profile</h3>
+      <p>Open Claude Desktop and say exactly this:</p>
+      <pre>"Use GodProfile to rebuild
+my README with luxury-glass
+theme, terminal SVG, WakaTime
+stats, and icon marquee."</pre>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <h3>Commit the generated SVGs</h3>
+      <p>Claude saves all SVGs to your <code style="font-size:0.8rem;color:var(--accent)">header/</code> folder and rewrites your README to reference them. Push and you're live.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    Built with <a href="https://github.com/jlowin/fastmcp" target="_blank">FastMCP</a> ·
+    Protocol by <a href="https://modelcontextprotocol.io" target="_blank">Anthropic</a> ·
+    <a href="https://github.com/Luc0-0/GodProfile/blob/main/LICENSE" target="_blank">MIT License</a>
+  </p>
+  <p style="margin-top:8px">
+    <a href="https://github.com/Luc0-0/GodProfile" target="_blank">★ Star on GitHub</a>
+    &nbsp;·&nbsp;
+    <a href="https://pypi.org/project/godprofile-mcp/" target="_blank">PyPI</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Luc0-0/GodProfile/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
+  </p>
+</footer>
+
+<script>
+  function copyInstall() {
+    navigator.clipboard.writeText('uvx godprofile-mcp').then(() => {
+      const t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 1800);
+    });
+  }
+</script>
+</body>
+</html>

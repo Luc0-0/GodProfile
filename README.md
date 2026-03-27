@@ -16,6 +16,7 @@
 [![Stars](https://img.shields.io/github/stars/Luc0-0/GodProfile?color=b6a891&labelColor=0b0f14)](https://github.com/Luc0-0/GodProfile/stargazers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-b6a891?labelColor=0b0f14)](CONTRIBUTING.md)
 [![CI](https://github.com/Luc0-0/GodProfile/actions/workflows/ci.yml/badge.svg)](https://github.com/Luc0-0/GodProfile/actions)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-%E2%86%92-b6a891?labelColor=0b0f14)](https://luc0-0.github.io/GodProfile/)
 
 <br/>
 
@@ -114,6 +115,34 @@ cd GodProfile
 pip install -e ".[dev]"
 python examples/quickstart.py   # generates all SVGs to examples/output/
 ```
+
+> If this saved you time, a ⭐ helps others find it — and it takes 2 seconds.
+
+## Try it in 30 seconds
+
+No Claude Desktop needed. Run this and open the output folder:
+
+```bash
+git clone https://github.com/Luc0-0/GodProfile
+cd GodProfile
+pip install -e ".[dev]"
+python examples/quickstart.py
+```
+
+This generates **9 live SVGs** into `examples/output/` — open any file in your browser to see animated output instantly. No API keys, no config, no signup.
+
+Or generate a single widget inline:
+
+```python
+from godprofile_mcp.core import terminal_emulator
+svg = terminal_emulator.create_typing_svg(["$ whoami", "you"], "luxury-glass")
+open("demo.svg", "w").write(svg)
+# open demo.svg in any browser
+```
+
+**Live preview** (no install) → [luc0-0.github.io/GodProfile](https://luc0-0.github.io/GodProfile/)
+
+<img src="assets/divider.svg" width="100%"/>
 
 ## MCP Config
 
