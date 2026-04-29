@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/luc0-0-godprofile-badge.png)](https://mseep.ai/app/luc0-0-godprofile)
+
 <div align="center">
 
 <img src="https://raw.githubusercontent.com/Luc0-0/GodProfile/main/assets/banner.svg" alt="GodProfile Banner" width="100%"/>
