@@ -283,3 +283,5 @@ Star the repo to follow progress.
 Built with [FastMCP](https://github.com/jlowin/fastmcp) · Protocol by [Anthropic](https://modelcontextprotocol.io) · MIT License
 
 </div>
+
+[![Verified on MseeP](https://mseep.ai/badge.svg)](https://mseep.ai/app/c88c7e8e-560e-4a09-9509-139be4f74a01)
